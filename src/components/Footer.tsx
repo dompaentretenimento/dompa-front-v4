@@ -101,7 +101,7 @@ export default function Footer() {
         <address className="body-small not-italic">
           Dompa Entretenimento Ltda e <br className="desktop:hidden" />
           48.935.528/0001-89 -{" "}
-          <Link href="/politica-de-privacidade" className="underline">
+          <Link href="#" className="underline">
             Política de Privacidade
           </Link>
         </address>

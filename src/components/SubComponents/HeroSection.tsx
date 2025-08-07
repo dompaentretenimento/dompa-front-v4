@@ -39,7 +39,8 @@ export default function HeroSection({
         <div className="flex flex-col justify-center items-center desktop:flex-row desktop:justify-start">
           <Link
             className="w-full desktop:w-max"
-            href={primaryButtonHref}
+            // href={primaryButtonHref}
+            href="#"
             passHref
           >
             <div className=" mb-xs desktop:mr-md desktop:mb-0 mt-md py-quark px-xs flex justify-center items-center rounded-button title-medium bg-essence-ivory text-essence-charcoal w-full">
@@ -53,7 +54,11 @@ export default function HeroSection({
             </div>
           </Link>
 
-          <Link href={secondaryButtonHref} passHref>
+          <Link
+            // href={secondaryButtonHref}
+            href="#"
+            passHref
+          >
             <p className="body-large h-max py-quark px-xs">
               {secondaryButtonText}
             </p>
@@ -68,8 +73,10 @@ export default function HeroSection({
           className="object-cover"
           src={backgroundMobile}
           alt="hero"
+          decoding="async"
+          loading="eager"
           fetchPriority="high"
-          priority
+          priority={true}
           fill
         />
       </picture>

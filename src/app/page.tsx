@@ -22,7 +22,7 @@ export default function Home() {
         secondaryButtonText="Conheça os serviços"
         secondaryButtonHref="/servicos"
         backgroundMobile="/home/Hero.png"
-        backgroundDesktop="/home/HeroDesk.png"
+        backgroundDesktop="/home/HeroDesk.webp"
       />
       <Parceiros />
       <SaibaMais />

@@ -21,7 +21,7 @@ export default function Home() {
         primaryButtonIconSrc="/home/ArrowRight.svg"
         secondaryButtonText="Conheça os serviços"
         secondaryButtonHref="/servicos"
-        backgroundMobile="/home/Hero.png"
+        backgroundMobile="/home/Hero.webp"
         backgroundDesktop="/home/HeroDesk.webp"
       />
       <Parceiros />

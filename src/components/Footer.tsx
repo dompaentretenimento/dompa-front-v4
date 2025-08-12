@@ -31,14 +31,14 @@ export default function Footer() {
             </p>
             <form className="mt-xs desktop:flex  items-center">
               <input
-                className="py-quark px-nano bg-essence-ivory text-neutral-darker w-full rounded-quark border-hairline mb-nano desktop:mb-none desktop:mr-nano desktop:ml-xs"
+                className="py-quark px-nano bg-essence-ivory text-neutral-darker w-full rounded-quark border-hairline mb-nano desktop:mb-none desktop:mr-nano desktop:ml-xs transition-colors duration-300 hover:bg-neutral-pale"
                 type="email"
                 name="email"
                 placeholder="Email"
                 autoComplete="on"
               />
               <button
-                className="body-large text-essence-charcoal bg-essence-ivory w-full rounded-button px-xs py-quark cursor-pointer"
+                className="body-large text-essence-charcoal bg-essence-ivory w-full rounded-button px-xs py-quark cursor-pointer transition-all duration-300 hover:text-essence-ivory hover:shadow-level3 hover:bg-neutral-darker active:bg-neutral-deepest"
                 type="submit"
               >
                 Assinar Newsletter
@@ -55,8 +55,9 @@ export default function Footer() {
           </p>
           <div className="flex ">
             <Link
-              className="mr-xs rounded-button border-hairline p-quark"
-              href="#"
+              className="mr-xs rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"
+              target="_blank"
+              href="https://www.instagram.com/grupodompa/"
               aria-label="Instagram"
             >
               <Image
@@ -68,8 +69,9 @@ export default function Footer() {
               />
             </Link>
             <Link
-              className="mr-xs rounded-button border-hairline p-quark"
-              href="#"
+              className="mr-xs rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"
+              target="_blank"
+              href="https://www.youtube.com/"
               aria-label="YouTube"
             >
               <Image
@@ -81,8 +83,9 @@ export default function Footer() {
               />
             </Link>
             <Link
-              className=" rounded-button border-hairline p-quark"
-              href="#"
+              className=" rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=5511916245978&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Dompa!"
               aria-label="WhatsApp"
             >
               <Image
@@ -101,7 +104,11 @@ export default function Footer() {
         <address className="body-small not-italic">
           Dompa Entretenimento Ltda e <br className="desktop:hidden" />
           48.935.528/0001-89 -{" "}
-          <Link href="#" className="underline">
+          <Link
+            target="_blank"
+            href="https://dompa-file-folder.s3.sa-east-1.amazonaws.com/static-uploads/site+dompa_politica+_de_privacidade.pdf"
+            className="underline"
+          >
             Política de Privacidade
           </Link>
         </address>

@@ -8,11 +8,13 @@ type HeroSectionProps = {
   primaryButtonText: string;
   primaryButtonHref: string;
   primaryButtonIconSrc: string;
-  secondaryButtonText: string;
-  secondaryButtonHref: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
   backgroundMobile: string;
   backgroundDesktop: string;
   tag?: string;
+  heroSize: string;
+  buttonFullSize?: boolean;
 };
 
 export default function HeroSection({
@@ -26,9 +28,13 @@ export default function HeroSection({
   backgroundMobile,
   backgroundDesktop,
   tag,
+  heroSize,
+  buttonFullSize = true,
 }: HeroSectionProps) {
   return (
-    <section className="text-essence-ivory relative min-h-[560px] flex justify-start items-center">
+    <section
+      className={`text-essence-ivory relative ${heroSize} flex justify-start items-center`}
+    >
       <article className="max-w-[636px] py-[64px] z-10 relative px-xs desktop:pl-giant desktop:pr-none">
         {tag && <p className="body-small mb-md">{tag}</p>}
         <h1 className="headline-large desktop:text-xl desktop:leading-xxl">
@@ -36,33 +42,39 @@ export default function HeroSection({
         </h1>
         <p className="mt-md body-large">{description}</p>
 
-        <div className="flex flex-col justify-center items-center desktop:flex-row desktop:justify-start">
+        <div className="flex flex-col justify-center items-center desktop:flex-row desktop:justify-start desktop:items-center desktop:mt-md">
           <Link
-            className="w-full desktop:w-max"
-            // href={primaryButtonHref}
-            href="#"
+            className={` desktop:mr-md ${
+              buttonFullSize
+                ? "w-full self-start desktop:max-w-[184px]"
+                : "w-[184px] self-start"
+            }`}
+            href={primaryButtonHref}
             passHref
           >
-            <div className=" mb-xs desktop:mr-md desktop:mb-0 mt-md py-quark px-xs flex justify-center items-center rounded-button title-medium bg-essence-ivory text-essence-charcoal w-full">
+            <div
+              className={`group hover:bg-neutral-darker hover:text-essence-ivory active:bg-essence-charcoal transition-all duration-300 mb-xs desktop:mb-none desktop:mt-none mt-md py-quark px-xs flex justify-center items-center rounded-button title-medium bg-essence-ivory text-essence-charcoal `}
+            >
               <p className="mr-nano">{primaryButtonText}</p>
               <Image
                 width={24}
                 height={24}
                 alt="arrow"
+                className="group-hover:invert"
                 src={primaryButtonIconSrc}
               />
             </div>
           </Link>
 
-          <Link
-            // href={secondaryButtonHref}
-            href="#"
-            passHref
-          >
-            <p className="body-large h-max py-quark px-xs">
-              {secondaryButtonText}
-            </p>
-          </Link>
+          {secondaryButtonText && secondaryButtonHref && (
+            <Link
+              className="duration-300 transition-all hover:bg-neutral-pale hover:text-neutral-darker active:bg-neutral-light rounded-button"
+              href={secondaryButtonHref}
+              passHref
+            >
+              <p className="body-large py-quark px-xs">{secondaryButtonText}</p>
+            </Link>
+          )}
         </div>
       </article>
 
@@ -76,7 +88,7 @@ export default function HeroSection({
           decoding="async"
           loading="eager"
           fetchPriority="high"
-          priority={true}
+          priority
           fill
         />
       </picture>

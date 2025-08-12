@@ -72,7 +72,7 @@ export default function Contato() {
             id="nome"
             type="text"
             {...register("nome")}
-            className="rounded-quark border-hairline p-nano w-full"
+            className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
           />
           {errors.nome && (
             <span className="text-red-500 text-xxs text-error-pure">
@@ -88,7 +88,7 @@ export default function Contato() {
           <select
             id="tipoDocumento"
             {...register("tipoDocumento")}
-            className="rounded-quark border-hairline p-nano w-full appearance-none"
+            className="rounded-quark border-hairline p-nano w-full appearance-none transition-colors duration-300 hover:bg-neutral-pale"
           >
             <option value="">Selecione CPF ou CNPJ</option>
             <option value="cpf">CPF</option>
@@ -113,7 +113,7 @@ export default function Contato() {
               replacement={{ _: /\d/ }}
               value={watch("documento") || ""}
               onChange={(e) => setValue("documento", e.target.value)}
-              className="rounded-quark border-hairline p-nano w-full"
+              className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
             />
             {errors.documento && (
               <span className="text-red-500 text-xxs text-error-pure">
@@ -133,7 +133,7 @@ export default function Contato() {
               type="email"
               autoComplete="on"
               {...register("email")}
-              className="rounded-quark border-hairline p-nano w-full"
+              className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
             />
             {errors.email && (
               <span className="text-red-500 text-xxs text-error-pure">
@@ -142,7 +142,7 @@ export default function Contato() {
             )}
           </div>
 
-          <div className="desktop:flex-1">
+          <div className="desktop:flex-1 mt-md desktop:mt-none">
             <label htmlFor="telefone" className="block mb-nano label-large">
               Telefone
             </label>
@@ -155,7 +155,7 @@ export default function Contato() {
               onChange={(e) =>
                 setValue("telefone", e.target.value, { shouldValidate: true })
               }
-              className="rounded-quark border-hairline p-nano w-full"
+              className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
             />
             {errors.telefone && (
               <span className="text-red-500 text-xxs text-error-pure">
@@ -172,7 +172,7 @@ export default function Contato() {
             id="empresa"
             type="text"
             {...register("empresa")}
-            className="rounded-quark border-hairline p-nano w-full"
+            className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
           />
           {errors.empresa && (
             <span className="text-red-500 text-xxs text-error-pure">
@@ -188,7 +188,7 @@ export default function Contato() {
           <select
             id="servico"
             {...register("servico")}
-            className="rounded-quark border-hairline p-nano w-full appearance-none"
+            className="rounded-quark border-hairline p-nano w-full appearance-none transition-colors duration-300 hover:bg-neutral-pale"
           >
             <option value=""></option>
             <option value="site">Criação de site</option>
@@ -209,7 +209,7 @@ export default function Contato() {
           <textarea
             id="mensagem"
             {...register("mensagem")}
-            className="rounded-quark border-hairline p-nano w-full min-h-[188px]"
+            className="rounded-quark border-hairline p-nano w-full min-h-[188px] transition-colors duration-300 hover:bg-neutral-pale"
           />
           {errors.mensagem && (
             <span className="text-red-500 text-xxs text-error-pure">
@@ -220,7 +220,7 @@ export default function Contato() {
 
         <button
           type="submit"
-          className="rounded-button text-essence-ivory title-large bg-primary-pure px-xs py-nano w-[207px]"
+          className="rounded-button text-essence-ivory title-large bg-primary-pure px-xs py-nano w-[207px] cursor-pointer hover:shadow-level3 hover:bg-primary-darker transition-all duration-300 active:shadow-none active:bg-essence-charcoal"
         >
           Enviar Mensagem
         </button>

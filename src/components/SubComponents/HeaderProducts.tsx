@@ -26,12 +26,14 @@ export default function HeaderProdutos({
         {products.map((product) => (
           <li key={product.id}>
             <button
-              className={`px-nano py-quark desktop:px-xs cursor-pointer  ${
+              className={`px-nano py-quark desktop:py-nano desktop:px-xs cursor-pointer rounded-button transition-all duration-300 hover:shadow-level3 ${
                 selected === product.id
-                  ? "bg-primary-pure text-essence-ivory bold rounded-button"
-                  : ""
+                  ? "bg-primary-pure hover:bg-primary-dark active:bg-primary-deepest active:shadow-none text-essence-ivory bold"
+                  : "hover:bg-primary-pale active:bg-notfoundtoken active:shadow-none"
               }`}
-              onClick={() => setSelected(product.id)}
+              onClick={() =>
+                document.startViewTransition(() => setSelected(product.id))
+              }
             >
               {product.prefix && (
                 <span className="desktop:inline-block hidden">

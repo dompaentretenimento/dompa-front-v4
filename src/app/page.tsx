@@ -20,9 +20,10 @@ export default function Home() {
         primaryButtonHref="/contato"
         primaryButtonIconSrc="/home/ArrowRight.svg"
         secondaryButtonText="Conheça os serviços"
-        secondaryButtonHref="/servicos"
+        secondaryButtonHref="/#servicos"
         backgroundMobile="/home/Hero.webp"
         backgroundDesktop="/home/HeroDesk.webp"
+        heroSize="h-[560px]"
       />
       <Parceiros />
       <SaibaMais />

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import HeaderProdutos from "../SubComponents/HeaderProducts";
+import Link from "next/link";
 
 const products = [
   {
@@ -17,55 +18,55 @@ const products = [
       { label: "Influenciadores", value: "12" },
     ],
     image: {
-      mobile: "/home/produtos/Mobile.png",
-      desktop: "/home/produtos/Desktop.png",
+      mobile: "/home/produtos/fazla/mobile.png",
+      desktop: "/home/produtos/fazla/desktop.png",
     },
   },
   {
     id: "vollu",
     label: "Vollu",
-    title: "Vollu transforma dados em campanhas certeiras",
+    title: "Autoconhecimento e inovação se encontram para te premiar",
     description:
-      "Com tecnologia de ponta e análise precisa, o Vollu identifica padrões de consumo e personaliza a comunicação da sua marca com os usuários. Resultados reais e campanhas de alto impacto.",
+      "O Vollu é uma plataforma única que combina gamificação com autoconhecimento, oferecendo experiências interativas e recompensadoras. Ideal tanto para pessoas que buscam se conhecer melhor quanto para empresas que desejam transformar treinamentos, campanhas internas e ações de engajamento em iniciativas dinâmicas e impactantes.",
     stats: [
-      { label: "Campanhas", value: "150+" },
-      { label: "Conversão", value: "87%" },
+      { label: "Usuários", value: "11.456" },
+      { label: "Influencers", value: "16" },
     ],
     image: {
-      mobile: "/home/produtos/Mobile.png",
-      desktop: "/home/produtos/Desktop.png",
+      mobile: "/home/produtos/vollu/mobile.png",
+      desktop: "/home/produtos/vollu/desktop.png",
     },
   },
   {
     id: "corp",
     label: "Corp",
     prefix: "Dompa",
-    title: "Soluções corporativas personalizadas",
+    title: "Um universo tecnológico pronto para auxiliar sua empresa",
     description:
-      "O Dompa Corp conecta empresas às melhores soluções em engajamento, campanhas promocionais e dados inteligentes. Tudo com segurança, escala e tecnologia proprietária.",
+      "A Dompa Corp é referência em soluções tecnológicas para campanhas promocionais, oferecendo uma plataforma completa e integrada que transforma ideias em resultados. Utilizamos ferramentas avançadas, inteligência artificial e estratégias personalizadas para garantir o sucesso de cada ação.",
     stats: [
-      { label: "Clientes B2B", value: "50+" },
-      { label: "Satisfação", value: "98%" },
+      { label: "Usuários", value: "23.456" },
+      { label: "Influencers", value: "45" },
     ],
     image: {
-      mobile: "/home/produtos/Mobile.png",
-      desktop: "/home/produtos/Desktop.png",
+      mobile: "/home/produtos/corp/mobile.png",
+      desktop: "/home/produtos/corp/desktop.png",
     },
   },
   {
     id: "promo",
     label: "Promo",
     prefix: "Dompa",
-    title: "Campanhas promocionais com resultado",
+    title: "Soluções completas e inovadoras para seu negócios",
     description:
-      "O Dompa Promo é especialista em criar campanhas de incentivo, sorteios e promoções com alto impacto, compliance e criatividade. Feito sob medida para sua marca.",
+      "Dompa Promo foi criado para atender empresas de todos os segmentos e tamanhos, oferecendo soluções completas e eficientes para campanhas promocionais. Com foco em alinhar o núcleo de negócios às estratégias de marketing, desenvolvemos ações personalizadas que engajam públicos e fortalecem marcas.",
     stats: [
-      { label: "Campanhas", value: "200+" },
-      { label: "Marcas atendidas", value: "70+" },
+      { label: "Usuários", value: "36.978" },
+      { label: "Influencers", value: "56" },
     ],
     image: {
-      mobile: "/home/produtos/Mobile.png",
-      desktop: "/home/produtos/Desktop.png",
+      mobile: "/home/produtos/promo/mobile.png",
+      desktop: "/home/produtos/promo/desktop.png",
     },
   },
 ];
@@ -76,6 +77,7 @@ export default function Produtos() {
 
   return (
     <section
+      id="produtos"
       aria-labelledby="produtos-heading"
       className="bg-primary-pure text-essence-ivory px-xs py-xxxl desktop:p-giant"
     >
@@ -107,19 +109,21 @@ export default function Produtos() {
               </div>
             ))}
           </div>
-          <button className="w-[128px] min-w-[128px] cursor-pointer py-quark px-xs flex justify-center rounded-button body-large border-hairline border-essence-ivory">
-            <div className="flex text-nowrap">
-              <p className="mr-nano">Ler mais</p>
-              <Image
-                width={24}
-                height={24}
-                alt="arrow"
-                src="/home/ArrowRight.svg"
-                style={{ width: "24px", height: "24px" }}
-                className="invert"
-              />
-            </div>
-          </button>
+          <Link href={`/produtos/${activeProduct?.id}`}>
+            <button className="w-[128px] min-w-[128px] cursor-pointer py-quark px-xs flex justify-center rounded-button body-large border-hairline border-essence-ivory transition-all duration-300 hover:bg-neutral-pale hover:text-neutral-deep hover:border-neutral-pale active:shadow-none active:bg-neutral-light group">
+              <div className="flex text-nowrap">
+                <p className="mr-nano">Ler mais</p>
+                <Image
+                  width={24}
+                  height={24}
+                  alt="arrow"
+                  src="/home/ArrowRight.svg"
+                  style={{ width: "24px", height: "24px" }}
+                  className="invert group-hover:invert-0"
+                />
+              </div>
+            </button>
+          </Link>
         </div>
         <div className="w-[288px] h-[356px] desktop:w-[636px] desktop:h-[446px] relative">
           <picture className="absolute top-0 left-0 w-full h-full">

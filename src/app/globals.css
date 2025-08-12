@@ -37,7 +37,7 @@
   --paragraph-line-height-quark: 12px;
   --paragraph-line-height-xs: 16px;
   --paragraph-line-height-md: 24px;
-  --radius-circular: 50%;
+  --radius-circular: 1000px;
   --radius-pill: 9999px;
   --radius-md: 24px;
   --radius-xs: 16px;
@@ -88,6 +88,9 @@
   --color-primary-deepest: #091021;
   --color-primary-tinted: #d0d8e5;
   --color-primary-dark: #182b48;
+  --color-primary-darker: #12213a;
+  --color-primary-soft: #52688a;
+  --color-primary-pale: #aab7cc;
   --color-tertiary-tinted: #f0f2f6;
   --color-tertiary-pale: #e6ebf3;
   --color-neutral-tinted: #fafafa;
@@ -106,6 +109,8 @@
   --color-essence-mint: #00f545;
   --color-accent-pure: #0095ff;
   --color-error-pure: #d44333;
+
+  --color-notfoundtoken: #7d8fa8;
 }
 
 @theme {
@@ -261,6 +266,10 @@
       margin-right: auto;
     }
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .scrollbar-hide {

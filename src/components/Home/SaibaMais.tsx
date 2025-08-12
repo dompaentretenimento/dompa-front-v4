@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function SaibaMais() {
@@ -19,7 +20,10 @@ export default function SaibaMais() {
         determinada a transformar o mercado de campanhas promocionais no Brasil.
       </p>
 
-      <button className="w-[230px] min-w-[230px] cursor-pointer mb-xs desktop:mr-md desktop:mb-0 desktop:w-max mt-md py-quark px-xs flex justify-center rounded-button title-medium bg-essence-ivory text-essence-charcoal">
+      <Link
+        href={"/quem-somos"}
+        className="w-[230px] min-w-[230px] cursor-pointer mb-xs desktop:mr-md desktop:mb-0 desktop:w-max mt-md py-quark px-xs flex justify-center rounded-button title-medium bg-essence-ivory text-essence-charcoal transition-all duration-300 group hover:text-essence-ivory hover:bg-neutral-darker active:bg-neutral-deepest"
+      >
         <div className="flex">
           <p className="mr-nano">Saiba mais sobre nós</p>
           <Image
@@ -28,9 +32,10 @@ export default function SaibaMais() {
             style={{ width: "24px", height: "24px" }}
             alt="arrow"
             src="/home/ArrowRight.svg"
+            className="group-hover:invert"
           />
         </div>
-      </button>
+      </Link>
     </section>
   );
 }

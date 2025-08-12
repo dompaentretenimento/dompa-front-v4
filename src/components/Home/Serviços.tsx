@@ -7,6 +7,7 @@ import { Pagination } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const titles = [
   "Ultra CRM",
@@ -30,9 +31,20 @@ const descriptions = [
   "Transformando dados em decisões estratégicas. Automação inteligente e análises avançadas para resultados precisos.",
 ];
 
+const links = [
+  "/servicos/ultra-crm",
+  "/servicos/cashback",
+  "/servicos/campanhas-promocionais",
+  "/servicos/social-listening",
+  "/servicos/e-commerce",
+  "/servicos/hotsite-promocional",
+  "/servicos/analise-de-dados",
+  "/servicos/inteligencia-artificial",
+];
+
 export default function Serviços() {
   return (
-    <section className="py-xxxl bg-tertiary-tinted">
+    <section id="servicos" className="py-xxxl bg-tertiary-tinted">
       <p className="headline-medium text-primary-pure mb-lg desktop:text-lg !pl-xs desktop:!pl-giant">
         Especialistas em fazer acontecer
       </p>
@@ -51,24 +63,26 @@ export default function Serviços() {
         {titles.map((title, idx) => {
           const fileName = idx === 0 ? "Imagem.gif" : `Imagem (${idx}).gif`;
           return (
-            <SwiperSlide key={idx} className="!w-[256px]">
-              <article
-                className={`flex flex-col text-start p-xs bg-essence-ivory w-[256px] h-[320px] rounded-xs border border-neutral-pale ${
-                  idx === 7 && "pr-xs"
-                }`}
-              >
-                <Image
-                  src={`/home/servicosGif/${fileName}`}
-                  alt={title}
-                  width={100}
-                  height={100}
-                  unoptimized
-                />
-                <h3 className="title-large text-primary-deepest">{title}</h3>
-                <p className="body-large text-neutral-muted text-charcoal">
-                  {descriptions[idx]}
-                </p>
-              </article>
+            <SwiperSlide key={idx} className="!w-[256px] py-[.5rem]">
+              <Link href={links[idx]}>
+                <article
+                  className={`flex flex-col text-start p-xs bg-essence-ivory w-[256px] h-[320px] rounded-xs border border-neutral-pale duration-300 transition-all hover:bg-neutral-tinted active:bg-neutral-pale hover:shadow-level3 cursor-pointer ${
+                    idx === 7 && "pr-xs"
+                  }`}
+                >
+                  <Image
+                    src={`/home/servicosGif/${fileName}`}
+                    alt={title}
+                    width={100}
+                    height={100}
+                    unoptimized
+                  />
+                  <h3 className="title-large text-primary-deepest">{title}</h3>
+                  <p className="body-large text-neutral-muted text-charcoal">
+                    {descriptions[idx]}
+                  </p>
+                </article>
+              </Link>
             </SwiperSlide>
           );
         })}

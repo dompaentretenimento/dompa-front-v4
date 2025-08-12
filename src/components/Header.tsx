@@ -3,20 +3,51 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
+  const pathname = usePathname();
+
   const navItems = [
     { href: "/", label: "Início" },
     { href: "/quem-somos", label: "Quem Somos" },
-    { href: "/servicos", label: "Serviços" },
-    { href: "/cases", label: "Cases" },
-    { href: "/produtos", label: "Produtos" },
-    { href: "/midia", label: "Mídia" },
+    { href: "/#servicos", label: "Serviços" },
+    { href: "/#cases", label: "Cases" },
+    { href: "/#produtos", label: "Produtos" },
+    { href: "/#midia", label: "Mídia" },
     { href: "/contato", label: "Contato" },
   ];
+
+  function isActive(href: string) {
+    const normalizedPath = pathname.replace(/\/$/, "") || "/";
+
+    if (href === "/") {
+      return normalizedPath === "/";
+    }
+
+    if (href.startsWith("/#")) {
+      const section = href.split("#")[1];
+
+      if (normalizedPath === "/" && pathname.includes(section)) {
+        return true;
+      }
+
+      if (
+        (section === "cases" && normalizedPath.startsWith("/cases")) ||
+        (section === "produtos" && normalizedPath.startsWith("/produtos")) ||
+        (section === "servicos" && normalizedPath.startsWith("/servicos"))
+      ) {
+        return true;
+      }
+
+      return false;
+    }
+
+    return normalizedPath === href.replace(/\/$/, "");
+  }
 
   useEffect(() => {
     if (menuOpen) {
@@ -44,16 +75,25 @@ export default function Header() {
           <ul className="hidden desktop:flex ml-md gap-[16px] body-medium text-neutral-darker">
             {navItems.map(({ href, label }) => (
               <li className="p-nano" key={href}>
-                <Link href={href}>{label}</Link>
+                <Link
+                  href={href}
+                  onClick={() => document.startViewTransition()}
+                  className={` duration-300 hover:shadow-level3 transition-all rounded-nano p-nano active:shadow-none active:bg-neutral-pale ${
+                    isActive(href) ? "text-primary-pure font-bold" : ""
+                  }`}
+                >
+                  {label}
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
         <Link
-          href="https://wa.me/5511999999999"
+          target="_blank"
+          href="https://api.whatsapp.com/send?phone=5511916245978&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Dompa!"
           aria-label="Converse conosco pelo WhatsApp"
-          className="hidden desktop:flex"
+          className="hidden desktop:flex p-quark rounded-button transition-all duration-300 hover:bg-primary-pale hover:shadow-level3 active:shadow-none active:bg-primary-soft"
         >
           <Image
             src="/header/Whatsapp.svg"
@@ -81,7 +121,8 @@ export default function Header() {
           ) : (
             <>
               <Link
-                href="https://wa.me/5511999999999"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5511916245978&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Dompa!"
                 aria-label="Converse conosco pelo WhatsApp"
               >
                 <Image
@@ -120,14 +161,21 @@ export default function Header() {
         <ul className="body-medium text-neutral-darker">
           {navItems.map(({ href, label }) => (
             <li className="p-nano mb-xs" role="menuitem" key={href}>
-              <Link href={href} onClick={() => setMenuOpen(false)}>
+              <Link
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                className={`transition-colors duration-300 ${
+                  isActive(href) ? "text-primary-pure font-bold" : ""
+                }`}
+              >
                 {label}
               </Link>
             </li>
           ))}
           <li className="p-nano">
             <Link
-              href="https://wa.me/5511999999999"
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=5511916245978&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Dompa!"
               aria-label="Converse conosco pelo WhatsApp"
               className="flex"
             >

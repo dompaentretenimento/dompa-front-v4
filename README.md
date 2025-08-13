@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+## Sumário
 
-First, run the development server:
+- [Visão Geral](#visão-geral)  
+- [Tecnologias](#tecnologias)  
+- [Começando](#começando)  
+
+---
+
+## Visão Geral
+
+Esta aplicação é desenvolvida com Next.js e conta com as seguintes dependências principais:
+
+- **Next.js 15.4.5** – Framework React com SSR e SSG embutidos
+- **React 19.1.0** – Biblioteca para construção de interfaces
+- **Tailwind CSS 4** – Framework CSS utilitário para desenvolvimento rápido
+- **React Hook Form** – Gerenciamento performático e flexível de formulários
+- **React Input Mask** – Máscaras para inputs (ex: telefone, CPF)
+- **Zod** – Validação de schemas com TypeScript
+- **Swiper** – Componente slider moderno e responsivo para React
+- **React Fast Marquee** – Componente para animação de texto em movimento (marquee)
+
+---
+
+## Tecnologias
+
+- **React 19**
+- **Next.js 15**
+- **TypeScript 5**
+- **Tailwind CSS 4**
+- **ESLint**
+- **Zod**
+- **React Hook Form**
+- **Swiper**
+- **React Fast Marquee**
+
+---
+
+## Começando
+
+### Pré-requisitos
+
+- Node.js >= 18.x
+- npm ou yarn
+
+### Instalação
+
+Clone o repositório:
 
 ```bash
+git clone https://github.com/rmdbarbosa/dompa-v2.git
+cd dompa-v2
+Instale as dependências:
+
+
+npm install
+# ou
+yarn install
+Executando localmente
+Inicie o servidor de desenvolvimento:
+
+
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Abra http://localhost:3000 no navegador para ver a aplicação.
+
+## Build para produção
+
+npm run build
+npm start
+
+
+## Scripts Disponíveis
+dev — Inicia o servidor de desenvolvimento do Next.js
+
+build — Gera a versão de produção da aplicação
+
+start — Inicia o servidor Next.js em modo produção
+
+lint — Executa o ESLint para checagem de qualidade do código
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

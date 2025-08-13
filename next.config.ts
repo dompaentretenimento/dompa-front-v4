@@ -24,6 +24,8 @@ if (fs.existsSync(robotsSource)) {
 }
 
 const nextConfig: NextConfig = {
+  trailingSlash: true,
+  output: 'export',
   // experimental: {
   //   viewTransition: true,
   // },

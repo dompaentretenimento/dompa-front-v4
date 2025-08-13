@@ -26,6 +26,9 @@ if (fs.existsSync(robotsSource)) {
 const nextConfig: NextConfig = {
   trailingSlash: true,
   output: 'export',
+  images: {
+    unoptimized: true, // importante para export estático
+  },
   // experimental: {
   //   viewTransition: true,
   // },

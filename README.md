@@ -64,7 +64,7 @@ Inicie o servidor de desenvolvimento:
 npm run dev
 # ou
 yarn dev
-Abra http://localhost:3000 no navegador para ver a aplicação.
+Abra http://localhost:8881 no navegador para ver a aplicação.
 
 ## Build para produção
 

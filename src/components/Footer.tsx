@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterForm from "./NewsletterForm";
 
 export default function Footer() {
   return (
@@ -29,21 +30,7 @@ export default function Footer() {
               <br className="hidden desktop:inline-block" /> exclusivas e
               benefícios direto no seu e-mail.
             </p>
-            <form className="mt-xs desktop:flex  items-center">
-              <input
-                className="py-quark px-nano bg-essence-ivory text-neutral-darker w-full rounded-quark border-hairline mb-nano desktop:mb-none desktop:mr-nano desktop:ml-xs transition-colors duration-300 hover:bg-neutral-pale"
-                type="email"
-                name="email"
-                placeholder="Email"
-                autoComplete="on"
-              />
-              <button
-                className="body-large text-essence-charcoal bg-essence-ivory w-full rounded-button px-xs py-quark cursor-pointer transition-all duration-300 hover:text-essence-ivory hover:shadow-level3 hover:bg-neutral-darker active:bg-neutral-deepest"
-                type="submit"
-              >
-                Assinar Newsletter
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
         <div className="mt-md flex items-center">

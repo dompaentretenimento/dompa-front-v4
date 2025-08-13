@@ -5,6 +5,16 @@ import Dompa from "@/components/quem-somos/Dompa";
 import MissaoeValores from "@/components/quem-somos/MissaoeValores";
 import HeroSection from "@/components/SubComponents/HeroSection";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quem Somos",
+  description:
+    "Conheça a Dompa, uma plataforma inovadora que transforma campanhas promocionais com tecnologia de ponta.",
+  twitter: {
+    card: "summary_large_image",
+  },
+};
 
 export default function page() {
   return (

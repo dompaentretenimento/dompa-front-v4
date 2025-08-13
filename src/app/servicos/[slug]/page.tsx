@@ -8,10 +8,33 @@ import ServicoSectionTwo from "@/components/servicos/ServicoSectionTwo";
 import HeroSection from "@/components/SubComponents/HeroSection";
 import { servicos } from "@/data/servicos";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicos.find((s) => s.slug === slug);
+
+  if (!service) {
+    return {
+      title: "Serviço não encontrado",
+      description: "O serviço solicitado não existe",
+    };
+  }
+
+  return {
+    title: service.title,
+    description: service.description,
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return servicos.map((s) => ({

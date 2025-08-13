@@ -97,9 +97,7 @@ export default function Cases() {
                   className={`p-nano cursor-pointer text-neutral-darker bg-neutral-tinted rounded-nano desktop:w-[172.23px] transition-all duration-300 hover:shadow-level3 active:shadow-none active:bg-neutral-pale ${
                     selected === product.id ? " text-primary-pure bold" : ""
                   }`}
-                  onClick={() =>
-                    document.startViewTransition(() => setSelected(product.id))
-                  }
+                  onClick={() => setSelected(product.id)}
                 >
                   {product.label}
                 </button>

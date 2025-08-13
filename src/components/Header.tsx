@@ -77,7 +77,6 @@ export default function Header() {
               <li className="p-nano" key={href}>
                 <Link
                   href={href}
-                  onClick={() => document.startViewTransition()}
                   className={` duration-300 hover:shadow-level3 transition-all rounded-nano p-nano active:shadow-none active:bg-neutral-pale ${
                     isActive(href) ? "text-primary-pure font-bold" : ""
                   }`}

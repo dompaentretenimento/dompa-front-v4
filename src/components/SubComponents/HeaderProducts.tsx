@@ -31,9 +31,7 @@ export default function HeaderProdutos({
                   ? "bg-primary-pure hover:bg-primary-dark active:bg-primary-deepest active:shadow-none text-essence-ivory bold"
                   : "hover:bg-primary-pale active:bg-notfoundtoken active:shadow-none"
               }`}
-              onClick={() =>
-                document.startViewTransition(() => setSelected(product.id))
-              }
+              onClick={() => setSelected(product.id)}
             >
               {product.prefix && (
                 <span className="desktop:inline-block hidden">

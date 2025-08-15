@@ -1,3 +1,4 @@
+"use client";
 import type { NextConfig } from "next";
 
 import fs from "fs";

@@ -129,7 +129,7 @@ export const productsData: Record<string, ProductData> = {
       heading: "Saiba mais sobre o Dompa Promo",
       description:
         "Dompa Promo foi criado para atender empresas de todos os segmentos e tamanhos, oferecendo soluções completas e eficientes para campanhas promocionais. Com foco em alinhar o núcleo de negócios às estratégias de marketing, desenvolvemos ações personalizadas que engajam públicos e fortalecem marcas.",
-      url: "https://dompashop.com.br/",
+      url: "https://dompapromo.com.br/",
     },
     sectionTwo: {
       heading: "Administração e Promoção",

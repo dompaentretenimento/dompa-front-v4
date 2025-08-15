@@ -68,20 +68,20 @@ export default function Footer() {
                 style={{ width: "24px", height: "24px" }}
               />
             </Link>
-            <Link
-              className="mr-xs rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"
-              target="_blank"
-              href="https://www.youtube.com/"
-              aria-label="YouTube"
-            >
-              <Image
-                src="/footer/Youtube.svg"
-                alt="YouTube"
-                width={24}
-                height={24}
-                style={{ width: "24px", height: "24px" }}
-              />
-            </Link>
+            {/*<Link*/}
+            {/*  className="mr-xs rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"*/}
+            {/*  target="_blank"*/}
+            {/*  href="https://www.youtube.com/"*/}
+            {/*  aria-label="YouTube"*/}
+            {/*>*/}
+            {/*  <Image*/}
+            {/*    src="/footer/Youtube.svg"*/}
+            {/*    alt="YouTube"*/}
+            {/*    width={24}*/}
+            {/*    height={24}*/}
+            {/*    style={{ width: "24px", height: "24px" }}*/}
+            {/*  />*/}
+            {/*</Link>*/}
             <Link
               className=" rounded-button border-hairline p-quark hover:bg-neutral-pale transition-colors duration-300"
               target="_blank"

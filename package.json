@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 8881",
+    "dev": "dotenv -e .env.local -- cross-env-shell \"next dev --port 8881\"",
     "build": "next build && next-sitemap",
-    "build:dev": "cross-env NEXT_PUBLIC_ENV=development npm run build && next-sitemap",
+    "build:dev": "dotenv -e .env.development -- cross-env-shell \"npm run build\"",
+    "build:production": "dotenv -e .env.production -- cross-env-shell \"npm run build\"",
     "start": "next start",
     "lint": "next lint"
   },
@@ -30,6 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cross-env": "^10.0.0",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
     "tailwindcss": "^4",

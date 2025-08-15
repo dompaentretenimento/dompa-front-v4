@@ -10,7 +10,7 @@ export default function NewsletterForm() {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API}/front/newsletter/register`,
+        `${process.env.NEXT_PUBLIC_API}/dompa/front/newsletter/register`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

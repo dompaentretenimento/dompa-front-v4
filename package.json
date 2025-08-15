@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "build:dev": "cross-env NEXT_PUBLIC_ENV=development npm run build",
+    "dev": "next dev --port 8881",
+    "build": "next build && next-sitemap",
+    "build:dev": "cross-env NEXT_PUBLIC_ENV=development npm run build && next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
@@ -14,10 +14,12 @@
     "@react-input/mask": "^2.0.4",
     "@types/react-input-mask": "^3.0.6",
     "next": "15.4.5",
+    "next-sitemap": "^4.2.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.62.0",
+    "sonner": "^2.0.7",
     "swiper": "^11.2.10",
     "zod": "^4.0.15"
   },

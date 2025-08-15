@@ -8,6 +8,15 @@ import Produtos from "@/components/Home/Produtos";
 import SaibaMais from "@/components/Home/SaibaMais";
 import Serviços from "@/components/Home/Serviços";
 import HeroSection from "@/components/SubComponents/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Bem-vindo à nossa página inicial",
+  twitter: {
+    card: "summary_large_image",
+  },
+};
 
 export default function Home() {
   return (

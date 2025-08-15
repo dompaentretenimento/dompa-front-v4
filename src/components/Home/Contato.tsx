@@ -5,28 +5,29 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputMask } from "@react-input/mask";
 import { useEffect } from "react";
+import { toast } from "sonner";
 
 const formSchema = z
   .object({
-    tipoDocumento: z.string().min(1, "Selecione tipo de documento"),
-    documento: z.string().min(11, "Documento é obrigatório"),
-    nome: z.string().min(3, "Nome é obrigatório"),
+    tipoDocumento: z.string().min(1, "Selecione tipo de document"),
+    document: z.string().min(11, "Documento é obrigatório"),
+    name: z.string().min(3, "Nome é obrigatório"),
     email: z.string().email("Email inválido"),
-    telefone: z.string().min(15, "Telefone inválido"),
-    empresa: z.string().min(1, "Nome da empresa é obrigatório"),
+    phone: z.string().min(15, "Telefone inválido"),
+    companyName: z.string().min(1, "Nome da empresa é obrigatório"),
     servico: z.string().min(1, "Selecione um serviço"),
-    mensagem: z.string().min(1, "Mensagem é obrigatória"),
+    message: z.string().min(1, "Mensagem é obrigatória"),
   })
   .refine(
     (data) => {
-      const cleaned = data.documento.replace(/\D/g, "");
+      const cleaned = data.document.replace(/\D/g, "");
       return data.tipoDocumento === "cpf"
         ? cleaned.length === 11
         : cleaned.length === 14;
     },
     {
       message: "Documento inválido",
-      path: ["documento"],
+      path: ["document"],
     }
   );
 
@@ -37,6 +38,7 @@ export default function Contato() {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors },
     watch,
   } = useForm<FormData>({
@@ -46,12 +48,45 @@ export default function Contato() {
 
   const tipoDocumento = watch("tipoDocumento");
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const onSubmit = async (data: FormData) => {
+    const payload = {
+      name: data.name,
+      document: data.document.replace(/\D/g, ""),
+      email: data.email,
+      phone: data.phone.replace(/\D/g, ""),
+      companyName: data.companyName,
+      message: data.message,
+      desiredService: [
+        {
+          value: data.servico,
+          label: data.servico,
+        },
+      ],
+    };
+
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/dompa/talkToUs`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Erro: ${res.statusText}`);
+      }
+
+      console.log(payload);
+      toast.success("Mensagem enviada com sucesso!");
+      reset();
+    } catch {
+      toast.error("Erro ao enviar:");
+    }
   };
 
   useEffect(() => {
-    setValue("documento", "");
+    setValue("document", "");
   }, [tipoDocumento, setValue]);
 
   return (
@@ -65,18 +100,18 @@ export default function Contato() {
 
       <div className="flex flex-col gap-[24px]">
         <div>
-          <label htmlFor="nome" className="block mb-nano label-large">
+          <label htmlFor="name" className="block mb-nano label-large">
             Nome Completo
           </label>
           <input
-            id="nome"
+            id="name"
             type="text"
-            {...register("nome")}
+            {...register("name")}
             className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
           />
-          {errors.nome && (
+          {errors.name && (
             <span className="text-red-500 text-xxs text-error-pure">
-              {errors.nome.message}
+              {errors.name.message}
             </span>
           )}
         </div>
@@ -104,20 +139,20 @@ export default function Contato() {
         {tipoDocumento && (
           <div>
             <InputMask
-              {...register("documento")}
+              {...register("document")}
               mask={
                 tipoDocumento === "cpf"
                   ? "___.___.___-__"
                   : "__.___.___/____-__"
               }
               replacement={{ _: /\d/ }}
-              value={watch("documento") || ""}
-              onChange={(e) => setValue("documento", e.target.value)}
+              value={watch("document") || ""}
+              onChange={(e) => setValue("document", e.target.value)}
               className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
             />
-            {errors.documento && (
+            {errors.document && (
               <span className="text-red-500 text-xxs text-error-pure">
-                {errors.documento.message}
+                {errors.document.message}
               </span>
             )}
           </div>
@@ -143,40 +178,40 @@ export default function Contato() {
           </div>
 
           <div className="desktop:flex-1 mt-md desktop:mt-none">
-            <label htmlFor="telefone" className="block mb-nano label-large">
+            <label htmlFor="phone" className="block mb-nano label-large">
               Telefone
             </label>
             <InputMask
-              id="telefone"
-              {...register("telefone")}
+              id="phone"
+              {...register("phone")}
               mask="(__) _____-____"
               replacement={{ _: /\d/ }}
-              value={watch("telefone") || ""}
+              value={watch("phone") || ""}
               onChange={(e) =>
-                setValue("telefone", e.target.value, { shouldValidate: true })
+                setValue("phone", e.target.value, { shouldValidate: true })
               }
               className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
             />
-            {errors.telefone && (
+            {errors.phone && (
               <span className="text-red-500 text-xxs text-error-pure">
-                {errors.telefone.message}
+                {errors.phone.message}
               </span>
             )}
           </div>
         </div>
         <div>
-          <label htmlFor="empresa" className="block mb-nano label-large">
+          <label htmlFor="companyName" className="block mb-nano label-large">
             Nome da empresa
           </label>
           <input
-            id="empresa"
+            id="companyName"
             type="text"
-            {...register("empresa")}
+            {...register("companyName")}
             className="rounded-quark border-hairline p-nano w-full transition-colors duration-300 hover:bg-neutral-pale"
           />
-          {errors.empresa && (
+          {errors.companyName && (
             <span className="text-red-500 text-xxs text-error-pure">
-              {errors.empresa.message}
+              {errors.companyName.message}
             </span>
           )}
         </div>
@@ -203,17 +238,17 @@ export default function Contato() {
         </div>
 
         <div>
-          <label htmlFor="mensagem" className="block mb-nano label-large">
+          <label htmlFor="message" className="block mb-nano label-large">
             Mensagem
           </label>
           <textarea
-            id="mensagem"
-            {...register("mensagem")}
+            id="message"
+            {...register("message")}
             className="rounded-quark border-hairline p-nano w-full min-h-[188px] transition-colors duration-300 hover:bg-neutral-pale"
           />
-          {errors.mensagem && (
+          {errors.message && (
             <span className="text-red-500 text-xxs text-error-pure">
-              {errors.mensagem.message}
+              {errors.message.message}
             </span>
           )}
         </div>

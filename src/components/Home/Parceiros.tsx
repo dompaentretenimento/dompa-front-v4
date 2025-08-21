@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 import React from "react";
 
 export default function Parceiros() {
-  const logos = Array.from({ length: 41 }, (_, i) => i);
+  const logos = Array.from({ length: 11 }, (_, i) => i);
 
   return (
     <section className="py-xxl desktop:py-xxxl min-h-[232px] desktop:min-h-[224px]">
@@ -20,7 +20,7 @@ export default function Parceiros() {
               width={100}
               height={32}
               style={{ width: "100px", height: "32px" }}
-              className="w-auto h-auto"
+              className="w-auto h-auto grayscale"
             />
           </div>
         ))}

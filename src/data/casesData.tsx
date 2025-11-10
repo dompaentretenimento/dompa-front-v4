@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type HeroData = {
   title: string;
   description: string;
@@ -12,7 +14,7 @@ export type HeroData = {
 
 export type CaseSectionData = {
   title: string;
-  text: any;
+  text: ReactNode;
   items: string[];
   linkHref: string;
   linkText: string;

@@ -31,7 +31,7 @@ export const casesData: CaseData[] = [
   {
     slug: "bello-futevolei",
     hero: {
-      title: "Bello FuteVôlei",
+      title: "Bello Futevôlei",
       description:
         "Confira os resultados das nossas campanhas e veja como transformamos ideias em ações que geram engajamento e impacto real.",
       primaryButtonText: "Fale Conosco",

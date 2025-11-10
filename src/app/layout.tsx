@@ -1,12 +1,20 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Red_Hat_Display, Ubuntu } from "next/font/google";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 
-const inter = Inter({
-  variable: "--font-primary",
+const redHat = Red_Hat_Display({
   subsets: ["latin"],
-  display: "optional",
+  weight: ["400", "500", "700"],
+  variable: "--font-redhat",
+  display: "swap",
+});
+
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-ubuntu",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -51,7 +59,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html data-scroll-behavior="smooth" lang="pt-BR" className={inter.variable}>
+    <html
+      lang="pt-BR"
+      className={`${redHat.variable} ${ubuntu.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <script
           type="application/ld+json"

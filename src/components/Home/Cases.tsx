@@ -9,7 +9,7 @@ import React, { useState } from "react";
 export const products = [
   {
     id: "bello-futevolei",
-    label: "Bello FuteVôlei",
+    label: "Bello Futevôlei",
     title: "Uma campanha de brilhar os olhos",
     description: `Em parceria com o Instituto Orsi e Bello, um dos maiores nomes do Futevôlei no país, realizamos uma campanha transformadora. O grande prêmio foi um PlayStation 5 folheado a ouro, uma verdadeira joia tecnológica, e uma exclusividade no mercado brasileiro.`,
     image: {

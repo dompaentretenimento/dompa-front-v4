@@ -4,14 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
+// ✅ IDs e slugs padronizados com hífen
+
 export const products = [
   {
     id: "bello-futevolei",
-    label: "Bello FuteVolei",
-    title: "Uma campanha de brihar os olhos",
-    description: `Em parceria com o Instituto Orsi e Bello, um dos maiores nomes do Futevôlei no país, realizamos uma campanha transformadora. O grande prêmio foi um PlayStation 5 folheado a ouro, uma verdadeira joia tecnológica, e uma exclusividade no mercado brasileiro.
-
-Essa campanha não apenas atraiu a atenção dos participantes, mas também reforçou o nosso posicionamento como uma empresa que entrega possibilidades únicas e surpreendentes.`,
+    label: "Bello FuteVôlei",
+    title: "Uma campanha de brilhar os olhos",
+    description: `Em parceria com o Instituto Orsi e Bello, um dos maiores nomes do Futevôlei no país, realizamos uma campanha transformadora. O grande prêmio foi um PlayStation 5 folheado a ouro, uma verdadeira joia tecnológica, e uma exclusividade no mercado brasileiro.`,
     image: {
       mobile: "/home/cases/bello-futevolei/mobile.png",
       desktop: "/home/cases/bello-futevolei/desktop.png",
@@ -21,9 +21,7 @@ Essa campanha não apenas atraiu a atenção dos participantes, mas também refo
     id: "byd",
     label: "BYD",
     title: "Rumo à UEFA",
-    description: `Em um desafio de apenas 7 dias, fomos convocados para lançar uma campanha promocional para a BYD, integrando 87 concessionárias em todo o país. Cada cliente que comprasse um carro da marca ganhava um número da sorte para concorrer a uma experiência exclusiva na UEFA Euro.
-
-A campanha foi aprovada pela SPA em apenas 48 horas, enquanto uma landing page interativa foi desenvolvida para conectar e engajar os participantes.`,
+    description: `Campanha promocional nacional integrando 87 concessionárias...`,
     image: {
       mobile: "/home/cases/byd/mobile.png",
       desktop: "/home/cases/byd/desktop.png",
@@ -33,9 +31,7 @@ A campanha foi aprovada pela SPA em apenas 48 horas, enquanto uma landing page i
     id: "corinthians",
     label: "Corinthians",
     title: "Gol de Sorte",
-    description: `Desenvolvemos uma plataforma inovadora em apenas 48 horas para tornar a experiência de uma festa no Corinthians ainda mais especial. O objetivo era criar um sistema que integrasse um mecanismo de sorteios e um dashboard gerenciável, permitindo que os organizadores acompanhassem tudo em tempo real.
-
-No dia do evento, os participantes faziam o check-in diretamente no local, garantindo sua validação para o sorteio.`,
+    description: `Desenvolvemos uma plataforma inovadora em apenas 48 horas...`,
     image: {
       mobile: "/home/cases/corinthians/mobile.png",
       desktop: "/home/cases/corinthians/desktop.png",
@@ -45,7 +41,7 @@ No dia do evento, os participantes faziam o check-in diretamente no local, garan
     id: "engemon",
     label: "Engemon",
     title: "Construindo um futuro",
-    description: `Utilizamos nosso produto Vollu para inovar na área de RH da Engemon. O Vollu foi utilizado para promover a evolução pessoal dos colaboradores por meio de testes interativos. Os participantes exploraram temas como autoconhecimento, habilidades profissionais e sustentabilidade. A iniciativa destacou o compromisso da Engemon com o desenvolvimento humano e a inovação dentro da empresa.`,
+    description: `Utilizamos nosso produto Vollu para inovar na área de RH...`,
     image: {
       mobile: "/home/cases/engemon/mobile.png",
       desktop: "/home/cases/engemon/desktop.png",
@@ -62,7 +58,17 @@ No dia do evento, os participantes faziam o check-in diretamente no local, garan
     },
   },
   {
-    id: "santomercado",
+    id: "sauva",
+    label: "Sauva",
+    title: "Gire, cole e conquiste seu Volvo",
+    description: `Criamos para a Sauva uma campanha gamificada com figurinhas, números da sorte e roleta premiada, com um Volvo zero quilômetro como prêmio.`,
+    image: {
+      mobile: "/cases/sauva/mobile.png",
+      desktop: "/cases/sauva/desktop.png",
+    },
+  },
+  {
+    id: "santo-mercado",
     label: "Santo Mercado",
     title: "Sabores da tecnologia",
     description: `O case feito para o Santo Mercado, anteriormente conhecido como Mercado Municipal de Santo Amaro, uniu muita tecnologia e recursos exclusivos disponibilizados pela Dompa. Criamos um hotsite interativo que permitiu que visitantes que realizassem compras acima de um valor definido concorressem a prêmios como cashback, vouchers e experiências VIP.
@@ -71,6 +77,36 @@ Além disso, com um CRM personalizado, os dados foram gerenciados e segmentados,
     image: {
       mobile: "/home/cases/santomercado/mobile.png",
       desktop: "/home/cases/santomercado/desktop.png",
+    },
+  },
+  {
+    id: "clube-parada",
+    label: "Clube Parada",
+    title: "Diversidade em conexão",
+    description: `Criamos o Clube Parada, uma plataforma de benefícios e pertencimento para a causa LGBTQIAPN+.`,
+    image: {
+      mobile: "/cases/clube-parada/mobile.png",
+      desktop: "/cases/clube-parada/desktop.png",
+    },
+  },
+  {
+    id: "ccaa",
+    label: "CCAA",
+    title: "Aprender e ganhar",
+    description: `Campanha promocional integrada que premiou alunos com uma viagem exclusiva.`,
+    image: {
+      mobile: "/cases/ccaa/mobile.png",
+      desktop: "/cases/ccaa/desktop.png",
+    },
+  },
+  {
+    id: "massa-fm",
+    label: "Massa FM",
+    title: "Casa dos sonhos",
+    description: `Campanha nacional com grande alcance e emoção, premiando ouvintes com uma casa nova.`,
+    image: {
+      mobile: "/cases/massa-fm/mobile.png",
+      desktop: "/cases/massa-fm/desktop.png",
     },
   },
 ];
@@ -130,24 +166,16 @@ export default function Cases() {
               </div>
             </Link>
           </div>
+
           <div className="w-[288px] h-[328px] desktop:w-[550px] desktop:h-[450px] relative desktop:ml-lg">
-            <picture className="absolute top-0 left-0 w-full h-full">
-              <source
-                media="(min-width: 1280px)"
-                srcSet={activeProduct?.image.desktop}
-              />
-              <source
-                media="(min-width: 300px)"
-                srcSet={activeProduct?.image.mobile}
-              />
-              <Image
-                className=" desktop:mt-none object-cover w-auto rounded-xs"
-                src={`${activeProduct?.image.mobile}`}
-                alt={`${activeProduct?.label}`}
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                fill
-              />
-            </picture>
+            <Image
+              className="object-cover w-auto rounded-xs"
+              src={activeProduct?.image.desktop ?? ""}
+              alt={activeProduct?.label ?? ""}
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              fill
+              priority
+            />
           </div>
         </article>
       </div>

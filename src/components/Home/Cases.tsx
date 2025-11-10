@@ -119,7 +119,7 @@ Além disso, com um CRM personalizado, os dados foram gerenciados e segmentados,
 ];
 
 export default function Cases() {
-  const [selected, setSelected] = useState("bello-futevolei");
+  const [selected, setSelected] = useState("byd");
   const activeProduct = products.find((p) => p.id === selected);
 
   return (

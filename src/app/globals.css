@@ -249,6 +249,14 @@
     font-weight: var(--font-weight-bold);
   }
 
+  .normal {
+    font-weight: var(--font-weight-normal);
+  }
+
+  .italic {
+    font-style: var(--font-style-italic);
+  }
+
   body {
     font-family: var(--font-family);
   }

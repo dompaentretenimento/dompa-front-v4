@@ -12,7 +12,7 @@ export type HeroData = {
 
 export type CaseSectionData = {
   title: string;
-  text: string;
+  text: any;
   items: string[];
   linkHref: string;
   linkText: string;
@@ -205,9 +205,9 @@ export const casesData: CaseData[] = [
   {
     slug: "sauva",
     hero: {
-      title: "Sauva",
+      title: "Saúva",
       description:
-        "Uma campanha promocional gamificada com figurinhas, roleta premiada e o grande prêmio: um Volvo zero quilômetro.",
+        `Criamos a base tecnológica que possibilitou a campanha Na Estrada do Bem: uma plataforma intuitiva, segura e escalável, que tornou o processo de doação e participação acessível e transparente.`,
       primaryButtonText: "Fale Conosco",
       primaryButtonHref: "/contato",
       primaryButtonIconSrc: "/home/ArrowRight.svg",
@@ -218,11 +218,13 @@ export const casesData: CaseData[] = [
     },
     section: {
       title: "Resultados",
-      text: "Ação divertida e interativa com geração de figurinhas e números da sorte, elevando o engajamento da marca a outro nível.",
+      text: <>A solução desenvolvida fortalece a operação e a credibilidade da campanha, garantindo fluidez, estabilidade e segurança em todas as etapas — da compra do número da sorte ao acompanhamento do impacto social.
+      <br/><br/>Além de potencializar a gestão do projeto, nossa entrega reforça o valor de uma experiência digital confiável e empática para ações beneficentes de grande alcance.</>,
       items: [
-        "Criação de figurinhas e mecânica gamificada",
-        "Integração de roleta premiada digital",
-        "Grande prêmio: um Volvo zero quilômetro",
+        "Desenvolvimento completo da plataforma digital, com arquitetura escalável e segura.",
+        "Campanhas digitais 100% regulamentadas pela SPA",
+        "Interface intuitiva e responsiva, voltada à acessibilidade e conversão.",
+        "Monitoramento e suporte contínuo, assegurando estabilidade durante toda a campanha.",
       ],
       linkHref: "https://naestradadobem.com.br/",
       linkText: "Acesse o site",
@@ -236,7 +238,7 @@ export const casesData: CaseData[] = [
     hero: {
       title: "Clube Parada",
       description:
-        "Uma plataforma de benefícios que conecta marcas e pessoas à causa LGBTQIAPN+ com experiências de propósito.",
+        "Criamos o Clube Parada em parceria com a ParadaSP: um ecossistema de benefícios e conexões que amplia o impacto do movimento LGBTQIAPN+ durante todo o ano.",
       primaryButtonText: "Fale Conosco",
       primaryButtonHref: "/contato",
       primaryButtonIconSrc: "/home/ArrowRight.svg",
@@ -246,12 +248,15 @@ export const casesData: CaseData[] = [
       buttonFullSize: false,
     },
     section: {
-      title: "Resultados",
-      text: "Engajamento e impacto social com foco em diversidade e pertencimento, consolidando o apoio à Parada SP.",
+      title: "Crescimento com Propósito",
+      text: <>A campanha do Clube Parada fortalece o relacionamento da ParadaSP com seu público ao criar uma presença contínua e significativa além do evento anual.
+      <br/><br/>O projeto posiciona a marca como um símbolo ativo de diversidade, gerando valor para parceiros, patrocinadores e para toda a comunidade LGBTQIAPN+.
+      <br/><br/>Mais que benefícios: é um convite à representatividade e ao engajamento social.</>,
       items: [
-        "Criação de plataforma de benefícios inclusiva",
-        "Conexão entre marcas e público LGBTQIAPN+",
-        "Experiências e recompensas com propósito social",
+        "Plataforma de benefícios exclusiva, com experiências reais e descontos inclusivos.",
+        "Conexão direta entre marcas e público LGBTQIAPN+, fortalecendo negócios diversos.",
+        "Posicionamento de marca com propósito, levando o nome ParadaSP além do evento.",
+        "Comunicação afetiva e identidade vibrante, refletindo orgulho, inclusão e pertencimento.",
       ],
       linkHref: "https://clubeparada.com.br/",
       linkText: "Acesse o site",
@@ -265,7 +270,8 @@ export const casesData: CaseData[] = [
     hero: {
       title: "CCAA",
       description:
-        "Campanha promocional integrada que conectou canais digitais e presenciais, premiando alunos com uma viagem exclusiva.",
+        `Lançamos campanhas que tornam a matrícula um passo rumo a novas conquistas,
+        inclusive viagens dos sonhos para os participantes.`,
       primaryButtonText: "Fale Conosco",
       primaryButtonHref: "/contato",
       primaryButtonIconSrc: "/home/ArrowRight.svg",
@@ -275,12 +281,19 @@ export const casesData: CaseData[] = [
       buttonFullSize: false,
     },
     section: {
-      title: "Resultados",
-      text: "Ação que impulsionou matrículas e reforçou a imagem moderna e próxima do público.",
+      title: "Evolução da Campanha",
+      text:<>
+      As campanhas Matrícula Premiada e Rematrícula Premiada reforçam o posicionamento do CCAA como uma marca moderna, próxima e premiadora.
+A mecânica — simples, digital e 100% regulamentada pela Secretaria de Prêmios e Apostas (SPA) — incentiva novas inscrições e renovações, aumentando a taxa de conversão e fidelidade dos alunos.
+<br/><br/>
+Além disso, os sites exclusivos oferecem uma experiência fluida e segura, integrando cadastro, geração de números da sorte e acesso aos regulamentos oficiais.
+<br/><br/>O resultado é uma campanha que estimula o engajamento, gera valor percebido e mantém o CCAA em destaque nacionalmente durante o período promocional.
+      </>,
       items: [
-        "Integração digital e física dos pontos de contato",
-        "Números da sorte por matrícula ou rematrícula",
-        "Grande prêmio: viagem exclusiva ao Caribe",
+        "Campanhas digitais com mecânica de sorteio 100% validada pela SPA",
+        "Jornada simples e intuitiva de participação (cadastro → números da sorte → sorteio)",
+        "Parceria estratégica com o CCAA em todo o território nacional",
+        "Ações integradas de comunicação e fidelização de alunos",
       ],
       linkHref: "https://matriculapremiada.ccaa.com.br/",
       linkText: "Acesse o site",
@@ -292,9 +305,9 @@ export const casesData: CaseData[] = [
   {
     slug: "massa-fm",
     hero: {
-      title: "Massa FM",
+      title: "A Casa dos Sonhos",
       description:
-        "Campanha nacional que uniu rádio, digital e eventos regionais em uma ação emocionante e premiada.",
+        "A campanha conecta marcas, lojistas e consumidores em uma ação promocional única. Combinando QR Codes, roleta de prêmios e um álbum de figurinhas sobre decoração, o projeto cria engajamento real e fortalece a presença do nosso cliente no mercado.",
       primaryButtonText: "Fale Conosco",
       primaryButtonHref: "/contato",
       primaryButtonIconSrc: "/home/ArrowRight.svg",
@@ -304,12 +317,14 @@ export const casesData: CaseData[] = [
       buttonFullSize: false,
     },
     section: {
-      title: "Resultados",
-      text: "Uma das maiores campanhas promocionais da rádio, com alto alcance e impacto nacional.",
+      title: "Impactos e Engajamento",
+      text: <>A campanha demonstra resultados expressivos em <strong>atração de público, frequência de compra e visibilidade regional.</strong><br/><br/>O formato interativo aproxima o consumidor das marcas parceiras e reforça o vínculo emocional com o tema do lar, um dos valores mais simbólicos para o público brasileiro.</>,
       items: [
-        "Campanha integrada entre rádio e digital",
-        "Prêmio principal: uma casa nova",
-        "Engajamento recorde entre ouvintes e participantes",
+        "Aumento da frequência de compras nos estabelecimentos participantes",
+        "Crescimento da base de cadastros e engajamento digital via roleta e álbum",
+        // "Ampliação da presença de marca do Grupo RCN e parceiros",
+        "Incentivo à economia local e fortalecimento do varejo regional",
+        "Ação 100% regulamentada pela Secretaria de Prêmios e Apostas (SPA)",
       ],
       linkHref: "https://promoacasadossonhos.com.br/",
       linkText: "Acesse o site",

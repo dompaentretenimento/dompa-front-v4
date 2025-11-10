@@ -8,16 +8,6 @@ import React, { useState } from "react";
 
 export const products = [
   {
-    id: "bello-futevolei",
-    label: "Bello Futevôlei",
-    title: "Uma campanha de brilhar os olhos",
-    description: `Em parceria com o Instituto Orsi e Bello, um dos maiores nomes do Futevôlei no país, realizamos uma campanha transformadora. O grande prêmio foi um PlayStation 5 folheado a ouro, uma verdadeira joia tecnológica, e uma exclusividade no mercado brasileiro.`,
-    image: {
-      mobile: "/home/cases/bello-futevolei/mobile.png",
-      desktop: "/home/cases/bello-futevolei/desktop.png",
-    },
-  },
-  {
     id: "byd",
     label: "BYD",
     title: "Rumo à UEFA",
@@ -27,16 +17,16 @@ export const products = [
       desktop: "/home/cases/byd/desktop.png",
     },
   },
-  {
-    id: "corinthians",
-    label: "Corinthians",
-    title: "Gol de Sorte",
-    description: `Desenvolvemos uma plataforma inovadora em apenas 48 horas...`,
-    image: {
-      mobile: "/home/cases/corinthians/mobile.png",
-      desktop: "/home/cases/corinthians/desktop.png",
-    },
-  },
+  // {
+  //   id: "corinthians",
+  //   label: "Corinthians",
+  //   title: "Gol de Sorte",
+  //   description: `Desenvolvemos uma plataforma inovadora em apenas 48 horas...`,
+  //   image: {
+  //     mobile: "/home/cases/corinthians/mobile.png",
+  //     desktop: "/home/cases/corinthians/desktop.png",
+  //   },
+  // },
   {
     id: "engemon",
     label: "Engemon",
@@ -58,21 +48,11 @@ export const products = [
     },
   },
   {
-    id: "sauva",
-    label: "Sauva",
-    title: "Gire, cole e conquiste seu Volvo",
-    description: `Criamos para a Sauva uma campanha gamificada com figurinhas, números da sorte e roleta premiada, com um Volvo zero quilômetro como prêmio.`,
-    image: {
-      mobile: "/cases/sauva/mobile.png",
-      desktop: "/cases/sauva/desktop.png",
-    },
-  },
-  {
     id: "santo-mercado",
     label: "Santo Mercado",
     title: "Sabores da tecnologia",
     description: `O case feito para o Santo Mercado, anteriormente conhecido como Mercado Municipal de Santo Amaro, uniu muita tecnologia e recursos exclusivos disponibilizados pela Dompa. Criamos um hotsite interativo que permitiu que visitantes que realizassem compras acima de um valor definido concorressem a prêmios como cashback, vouchers e experiências VIP.
-    
+
 Além disso, com um CRM personalizado, os dados foram gerenciados e segmentados, garantindo eficiência e bons resultados para o cliente.`,
     image: {
       mobile: "/home/cases/santomercado/mobile.png",
@@ -80,20 +60,23 @@ Além disso, com um CRM personalizado, os dados foram gerenciados e segmentados,
     },
   },
   {
-    id: "clube-parada",
-    label: "Clube Parada",
-    title: "Diversidade em conexão",
-    description: `Criamos o Clube Parada, uma plataforma de benefícios e pertencimento para a causa LGBTQIAPN+.`,
+    id: "sauva",
+    label: "Saúva",
+    title: "Na Estrada do Bem",
+    subtitle: `Tecnologia que impulsiona o impacto social`,
+    description: <>Desenvolvemos a estrutura digital que transformou uma campanha beneficente em uma experiência simples, segura e inspiradora — conectando tecnologia, propósito e resultado.</>,
     image: {
-      mobile: "/cases/clube-parada/mobile.png",
-      desktop: "/cases/clube-parada/desktop.png",
+      mobile: "/cases/sauva/mobile.png",
+      desktop: "/cases/sauva/desktop.png",
     },
   },
   {
     id: "ccaa",
     label: "CCAA",
-    title: "Aprender e ganhar",
-    description: `Campanha promocional integrada que premiou alunos com uma viagem exclusiva.`,
+    title: "Viagem Premiada",
+    subtitle: `Campanhas que transformam matrícula em experiência e recompensa`,
+    description: `Em parceria com o CCAA, desenvolvemos campanhas nacionais que incentivam alunos a se matricularem ou renovarem seus cursos com a chance de ganhar viagens incríveis.
+    Uma ação que une engajamento, fidelização e resultados reais.`,
     image: {
       mobile: "/cases/ccaa/mobile.png",
       desktop: "/cases/ccaa/desktop.png",
@@ -102,11 +85,35 @@ Além disso, com um CRM personalizado, os dados foram gerenciados e segmentados,
   {
     id: "massa-fm",
     label: "Massa FM",
-    title: "Casa dos sonhos",
-    description: `Campanha nacional com grande alcance e emoção, premiando ouvintes com uma casa nova.`,
+    title: "Promoção A Casa dos Sonhos",
+    subtitle: "Engajamento e encantamento que transformam compras em experiências",
+    description: `A campanha, criada em parceria com Grupo RCN e Massa FM, transforma o ato de comprar em uma jornada divertida e aspiracional. A cada compra, o participante escaneia um QR Code, gira a roleta e acumula chances de conquistar o grande prêmio: uma casa dos sonhos.`,
     image: {
       mobile: "/cases/massa-fm/mobile.png",
       desktop: "/cases/massa-fm/desktop.png",
+    },
+  },
+  {
+    id: "clube-parada",
+    label: "Clube Parada",
+    title: "Diversidade em conexão",
+    subtitle: "Benefícios que fortalecem a diversidade",
+    description: <>Uma plataforma criada em parceria com ParadaSP e Dompa, para fortalecer a comunidade LGBTQIAPN+ com experiências, descontos e pertencimento.
+    <br/>Uma iniciativa que transforma propósito em benefícios reais.
+    </>,
+    image: {
+      mobile: "/cases/clube-parada/mobile.png",
+      desktop: "/cases/clube-parada/desktop.png",
+    },
+  },
+  {
+    id: "bello-futevolei",
+    label: "Bello Futevôlei",
+    title: "Uma campanha de brilhar os olhos",
+    description: `Em parceria com o Instituto Orsi e Bello, um dos maiores nomes do Futevôlei no país, realizamos uma campanha transformadora. O grande prêmio foi um PlayStation 5 folheado a ouro, uma verdadeira joia tecnológica, e uma exclusividade no mercado brasileiro.`,
+    image: {
+      mobile: "/home/cases/bello-futevolei/mobile.png",
+      desktop: "/home/cases/bello-futevolei/desktop.png",
     },
   },
 ];
@@ -148,6 +155,7 @@ export default function Cases() {
               {activeProduct?.label}
             </span>
             <h3 className="title-large my-nano">{activeProduct?.title}</h3>
+            {activeProduct?.subtitle && <h5 className="title-small normal italic my-nano pb-[1rem]">{activeProduct?.subtitle}</h5>}
             <p className="body-large">{activeProduct?.description}</p>
 
             <Link

@@ -1,8 +1,5 @@
-"use client";
-import type { NextConfig } from "next";
-
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
 const env = process.env.NEXT_PUBLIC_ENV;
 const isDevelopment = env === "development";
@@ -24,15 +21,12 @@ if (fs.existsSync(robotsSource)) {
   );
 }
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   trailingSlash: true,
-  output: 'export',
+  output: "export",
   images: {
-    unoptimized: true, // importante para export estático
+    unoptimized: true, // important for static export
   },
-  // experimental: {
-  //   viewTransition: true,
-  // },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

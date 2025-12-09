@@ -220,7 +220,7 @@ export const casesData: CaseData[] = [
     },
     section: {
       title: "Resultados",
-      text: <>A solução desenvolvida fortalece a operação e a credibilidade da campanha, garantindo fluidez, estabilidade e segurança em todas as etapas — da compra do número da sorte ao acompanhamento do impacto social.
+      text: <>A solução desenvolvida fortalece a operação e a credibilidade da campanha, garantindo fluidez, estabilidade e segurança em todas as etapas — desde a doação e recebimento do número da sorte ao acompanhamento do impacto social.
       <br/><br/>Além de potencializar a gestão do projeto, nossa entrega reforça o valor de uma experiência digital confiável e empática para ações beneficentes de grande alcance.</>,
       items: [
         "Desenvolvimento completo da plataforma digital, com arquitetura escalável e segura.",
